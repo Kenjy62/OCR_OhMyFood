@@ -2,6 +2,7 @@ $color-primary: #9356DC;
 $color-primary-opacified: #9256dc2c;
 $color-secondary: #FF79DA;
 $color-tertiaire: #99E2D0;
+$color-tertiaire-text: #269c80;
 
 $color-background: #eaeaea;
 $color-background-secondary: #f6f6f6;
@@ -102,6 +103,8 @@ header {
         &__title {
             font-size: 25px;
             font-weight: bold;
+            padding-top: 15px;
+            padding-bottom: 15px;
         }
         &__step {
             height: 80px;
@@ -174,6 +177,8 @@ header {
         &__title {
             font-size: 25px;
             font-weight: bold;
+            padding-top: 15px;
+            padding-bottom: 15px;
         }
         
         &__card {
@@ -182,20 +187,17 @@ header {
             background-color: $color-background-tertiaire;
             border-radius: 20px;
             @include shadow();
-            &__image img {
-                width: 100%;
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-                max-height: 220px;
-            }
+
             &__infos {
                 padding: 20px;
                 display: flex;
                 justify-content: space-between;
+                
                 &__restaurant__name {
                     font-size: 18px;
                     font-weight: bold;
                 }
+                
                 &__like {
                     display: flex;
                     i { 
@@ -205,6 +207,29 @@ header {
                             color: $color-primary;
                         }
                     }
+                }
+            }
+            
+            &__image { 
+
+                position: relative;
+                
+                &__new {
+                    position: absolute;
+                    padding: 10px;
+                    background: $color-tertiaire;
+                    right: 10px;
+                    top: 10px;
+                    border-radius: 5px;
+                    color: $color-tertiaire-text;
+                    font-weight: bold;
+                }
+            
+                img {
+                    width: 100%;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    max-height: 220px;
                 }
             }
         }
