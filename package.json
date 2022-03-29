@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "OpenClassRooms Project 3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./style/style.scss:./style/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kenjy62/OPC_OhMyFood.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kenjy62/OPC_OhMyFood/issues"
+  },
+  "homepage": "https://github.com/Kenjy62/OPC_OhMyFood#readme"
+}

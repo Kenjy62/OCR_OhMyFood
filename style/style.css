@@ -1,0 +1,294 @@
+html, body {
+  background-color: #eaeaea;
+  font-family: "Roboto";
+}
+
+header {
+  padding: 15px 0px 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+header h1 {
+  font-family: "Shrikhand";
+  margin: 0;
+}
+
+.search {
+  padding: 15px 0px 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search .search__bar {
+  font-weight: bold;
+  color: #303030;
+}
+
+.search .search__bar i {
+  margin-right: 15px;
+}
+
+#explore-restaurant {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+#explore-restaurant .wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+#explore-restaurant .wrapper__title {
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#explore-restaurant .wrapper__subtitle {
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#explore-restaurant .wrapper__button {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 30px;
+  padding: 20px;
+  background-color: #FF79DA;
+  color: white;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+#how-works {
+  background-color: #ffffff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#how-works .wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+#how-works .wrapper__title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#how-works .wrapper__step {
+  height: 80px;
+  background-color: #f6f6f6;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-radius: 25px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+#how-works .wrapper__step:hover {
+  background-color: #9256dc2c;
+}
+
+#how-works .wrapper__step__indication {
+  height: 80px;
+  width: 30px;
+  left: -15px;
+  position: absolute;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#how-works .wrapper__step__indication span {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: #9356DC;
+  color: white;
+  line-height: 30px;
+  margin: auto;
+  text-align: center;
+}
+
+#how-works .wrapper__step__content {
+  width: 85%;
+  margin: auto;
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#how-works .wrapper__step__content i {
+  margin-right: 30px;
+  font-size: 20px;
+  color: #7d7d7d;
+}
+
+#how-works .wrapper__step__content i.active {
+  color: #9356DC;
+}
+
+#how-works .wrapper__step__content span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#how-works .wrapper__step.active {
+  background-color: #9356DC;
+}
+
+#restaurants {
+  background-color: #f6f6f6;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#restaurants .wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+#restaurants .wrapper__title {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#restaurants .wrapper__card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+#restaurants .wrapper__card__image img {
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  max-height: 220px;
+}
+
+#restaurants .wrapper__card__infos {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#restaurants .wrapper__card__infos__restaurant__name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#restaurants .wrapper__card__infos__like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#restaurants .wrapper__card__infos__like i {
+  font-size: 20px;
+  margin: auto;
+}
+
+#restaurants .wrapper__card__infos__like i.far.fa-heart:hover {
+  color: #9356DC;
+}
+
+footer {
+  background-color: #353535;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+footer .wrapper__footer__logo {
+  font-family: "Shrikhand";
+  color: white;
+  font-size: 18px;
+}
+
+footer .wrapper__footer__nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+footer .wrapper__footer__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+footer .wrapper__footer__nav ul li {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+footer .wrapper__footer__nav ul li i {
+  margin-right: 10px;
+  size: 13px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,247 @@
+$color-primary: #9356DC;
+$color-primary-opacified: #9256dc2c;
+$color-secondary: #FF79DA;
+$color-tertiaire: #99E2D0;
+
+$color-background: #eaeaea;
+$color-background-secondary: #f6f6f6;
+$color-background-tertiaire: #ffffff;
+
+$color-icon : #7d7d7d;
+
+$font-logo: 'Shrikhand';
+$font-primary: 'Roboto';
+
+$footer-color: #353535;
+
+@mixin font($font-family){
+    font-family: $font-family;
+}
+
+@mixin shadow(){
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+}
+
+html, body {
+    background-color: $color-background;
+    @include font($font-primary)
+}
+
+header {
+    padding: 15px 0px 15px 0px;
+    display: flex;
+    justify-content: center;
+    background-color: $color-background-tertiaire;
+    @include shadow();
+    h1{
+        @include font($font-logo);
+        margin: 0;
+    }
+}
+
+.search {
+    padding: 15px 0px 15px 0px;
+    display: flex;
+    justify-content: center;
+    .search__bar {
+        font-weight: bold;
+        color: #303030;
+        i {
+            margin-right: 15px;
+        }
+    }
+}
+
+#explore-restaurant {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: $color-background-secondary;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .wrapper{
+        width: 85%;
+        margin: auto;
+
+        &__title {
+            font-weight: bold;
+            font-size: 25px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        &__subtitle {
+            font-size: 17px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        &__button {
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: fit-content;
+            border-radius: 30px;
+            padding: 20px;
+            background-color: $color-secondary;
+            color: white;
+            @include shadow();
+        }
+    }
+}
+
+#how-works {
+    background-color: $color-background-tertiaire;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    .wrapper {
+        width: 85%;
+        margin: auto;
+        &__title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        &__step {
+            height: 80px;
+            background-color: $color-background-secondary;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 25px;
+            position: relative;
+            display: flex;
+            @include shadow();
+
+            &:hover{
+                background-color: $color-primary-opacified;
+            }
+
+            &__indication {
+                height: 80px;
+                width: 30px;
+                left: -15px;
+                position: absolute;
+                bottom: 0px;
+                display: flex;
+                span {
+                    border-radius: 50%;
+                    width: 30px;
+                    height: 30px;
+                    background-color: $color-primary;
+                    color: white;
+                    line-height: 30px;
+                    margin: auto;
+                    text-align: center;
+                }  
+            }
+
+            &__content {
+                width: 85%;
+                margin: auto;
+                margin-left: 15px;
+                display: flex;
+                justify-content: center;
+                i {
+                    margin-right: 30px;
+                    font-size: 20px;
+                    color: $color-icon;
+                }
+                i.active {
+                    color: $color-primary;
+                }
+                span {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+        }
+        &__step.active {
+            background-color: $color-primary;
+        }
+    }
+}
+
+#restaurants {
+    background-color: $color-background-secondary;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    .wrapper {
+        width: 85%;
+        margin: auto;
+        &__title {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        &__card {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            background-color: $color-background-tertiaire;
+            border-radius: 20px;
+            @include shadow();
+            &__image img {
+                width: 100%;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+                max-height: 220px;
+            }
+            &__infos {
+                padding: 20px;
+                display: flex;
+                justify-content: space-between;
+                &__restaurant__name {
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                &__like {
+                    display: flex;
+                    i { 
+                        font-size: 20px; 
+                        margin: auto;
+                        &.far.fa-heart:hover{
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $footer-color;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    .wrapper {
+        width: 85%;
+        margin: auto;
+        &__footer__logo {
+            @include font($font-logo);
+            color: white;
+            font-size: 18px;
+        }
+        &__footer__nav {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        &__footer__nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: white;
+            li {
+                margin-bottom: 5px;
+                margin-top: 5px;
+                i {
+                    margin-right: 10px;
+                    size: 13px;
+                }
+            }
+        }
+    }
+}
