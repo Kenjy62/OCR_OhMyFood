@@ -47,16 +47,42 @@ html, body {
     @include font($font-primary)
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
 header {
-    padding: 15px 0px 15px 0px;
+    position: relative;
     display: flex;
-    justify-content: center;
     background-color: $color-background-tertiaire;
     @include shadow();
+
     h1{
         @include font($font-logo);
-        margin: 0;
+        margin: auto;
+        padding: 15px;
     }
+
+    .return {
+        position: absolute;
+        left: 15px;
+        height: 100%;
+        display: flex;
+        a {
+            display: flex;
+            margin: auto;
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+
 }
 
 .search {
@@ -257,6 +283,122 @@ header {
                 }
             }
         }
+    }
+}
+
+#restaurant__picture {
+    z-index: 1;
+    position: relative;
+    img {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+    }
+}
+
+#restaurant__content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    position: relative;
+    z-index: 2;
+    margin-top: -30px;
+    background-color: $color-background-secondary;
+    .wrapper {
+        width: 85%;
+        margin: auto;
+        &__title {
+            @include font($font-logo);
+            font-size: 25px;
+            font-weight: bold;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .divider {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 50px;
+            height: 3px;
+            border-radius: 5px;
+            background-color: $color-tertiaire;
+        }
+
+        &__selection {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            &__item {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                position: relative;
+                background-color: #ffffff;
+                border-radius: 10px;
+                @include shadow();
+                padding: 15px;
+                &:hover > .check {
+                    transition-duration: 500ms;
+                    width: 60px;
+                    display: flex;
+                }
+
+                &:hover > .check > i {
+                    transition-delay: 500ms;
+                    transition-duration: 100ms;
+                    display: block;
+                    transform: scale(1);
+                }
+                
+
+                &:hover > .wrapper__selection__item__content > .wrapper__selection__item__content__infos {
+                    width: calc(80% - 60px);
+                    transition-duration: 500ms;
+                }
+                
+                &__content {
+                    width: 100%;
+                    display: flex;
+                    &__infos {
+                        width: 80%;
+                        float: left;
+                        transition-duration: 500ms;
+                        &__name {
+                            font-weight: bold;
+                        }
+                        &__subname {
+                            margin-top: 5px;
+                            font-size: 14px;
+                        }
+                    }
+                    &__price {
+                        width: 20%;
+                        display: flex;
+                        flex-direction: column-reverse;
+                        text-align: end;
+                        font-weight: bold;
+                    }
+                }
+                .check {
+                    right: 0;
+                    top:0;
+                    width: 0px;
+                    height: 100%;
+                    background: $color-tertiaire;
+                    position: absolute;
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    transition-duration: 500ms;
+                    justify-content: center;
+                    i { 
+                        margin: auto;
+                        display: none;
+                        color: white;
+                        scale: 0;
+                    }
+                }
+
+            }
+        }     
     }
 }
 
