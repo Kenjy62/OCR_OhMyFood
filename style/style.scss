@@ -1,5 +1,5 @@
 $color-primary: #9356DC;
-$color-primary-opacified: #9256dc2c;
+$color-primary-opacified: #9256dc3b;
 $color-secondary: #FF79DA;
 $color-tertiaire: #99E2D0;
 $color-tertiaire-text: #269c80;
@@ -20,13 +20,27 @@ $footer-color: #353535;
 }
 
 @mixin shadow(){
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+    transition-duration: 700ms;
+}
+
+@mixin shadow--animation(){
+    transition-duration: 700ms;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.541);
 }
 
 @mixin gradient(){
+    transition-duration: 700ms;
     background: rgb(147,86,220);
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
 }
+
+@mixin gradient--animation(){
+    transition-duration: 700ms;
+    background: rgb(163, 103, 236);
+    background: linear-gradient(0deg, rgb(182, 132, 243) 0%, rgb(241, 157, 218) 100%);
+}
+
 
 html, body {
     background-color: $color-background;
@@ -70,6 +84,7 @@ header {
         margin: auto;
 
         &__title {
+            
             font-weight: bold;
             font-size: 25px;
             margin-top: 10px;
@@ -92,6 +107,11 @@ header {
             @include gradient();
             color: white;
             @include shadow();
+            &:hover, :active {
+                cursor: pointer;
+                @include shadow--animation();
+                @include gradient--animation();
+            }
         }
     }
 }
@@ -121,8 +141,13 @@ header {
             display: flex;
             @include shadow();
 
-            &:hover{
+            &:hover {
+                @include shadow--animation();
                 background-color: $color-primary-opacified;
+            }
+
+            &:hover > .wrapper__step__content > i{
+                color: $color-primary;
             }
 
             &__indication {
@@ -155,17 +180,11 @@ header {
                     font-size: 20px;
                     color: $color-icon;
                 }
-                i.active {
-                    color: $color-primary;
-                }
                 span {
                     font-weight: bold;
                     font-size: 18px;
                 }
             }
-        }
-        &__step.active {
-            background-color: $color-primary;
         }
     }
 }

@@ -12,8 +12,10 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
-          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
 }
 
 header h1 {
@@ -80,12 +82,27 @@ header h1 {
   width: fit-content;
   border-radius: 30px;
   padding: 20px;
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
   background: #9356dc;
   background: -webkit-gradient(linear, left bottom, left top, from(#9356dc), to(#ff79da));
   background: linear-gradient(0deg, #9356dc 0%, #ff79da 100%);
   color: white;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
-          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+  transition-duration: 700ms;
+}
+
+#explore-restaurant .wrapper__button:hover, #explore-restaurant .wrapper__button :active {
+  cursor: pointer;
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.541);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.541);
+  transition-duration: 700ms;
+  background: #a367ec;
+  background: -webkit-gradient(linear, left bottom, left top, from(#b684f3), to(#f19dda));
+  background: linear-gradient(0deg, #b684f3 0%, #f19dda 100%);
 }
 
 #how-works {
@@ -122,12 +139,22 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
-          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
 }
 
 #how-works .wrapper__step:hover {
-  background-color: #9256dc2c;
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.541);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.541);
+  background-color: #9256dc3b;
+}
+
+#how-works .wrapper__step:hover > .wrapper__step__content > i {
+  color: #9356DC;
 }
 
 #how-works .wrapper__step__indication {
@@ -170,17 +197,9 @@ header h1 {
   color: #7d7d7d;
 }
 
-#how-works .wrapper__step__content i.active {
-  color: #9356DC;
-}
-
 #how-works .wrapper__step__content span {
   font-weight: bold;
   font-size: 18px;
-}
-
-#how-works .wrapper__step.active {
-  background-color: #9356DC;
 }
 
 #restaurants {
@@ -212,8 +231,10 @@ header h1 {
   margin-bottom: 30px;
   background-color: #ffffff;
   border-radius: 20px;
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
-          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+  -webkit-transition-duration: 700ms;
+          transition-duration: 700ms;
 }
 
 #restaurants .wrapper__card__infos {
