@@ -49,6 +49,8 @@ html, body {
 a {
     color: black;
     text-decoration: none;
+    display: block;
+    position: relative;
 }
 
 a:visited {
@@ -246,6 +248,7 @@ header {
     padding-bottom: 30px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     .wrapper {
         width: 85%;
         margin: auto;
@@ -276,6 +279,7 @@ header {
                 &__like {
                     display: flex;
                     position: relative;
+                    z-index: 15;
                     i { 
                         font-size: 20px; 
                         margin: auto;
@@ -608,3 +612,71 @@ footer {
     }
   }
   
+
+  @media all and (max-width: 992px) and (min-width: 768px)
+  { 
+
+    #how-works {
+        .wrapper {
+            width: 65%;
+        }
+    }
+
+    #restaurants {
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &__card {
+                width: calc(100% / 2 - 20px);
+            }
+        }
+    }
+
+    #restaurant__content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+        padding-left: 20px;
+        padding-right: 20px;
+        .wrapper {
+            width: calc(100% / 3 - 20px);
+        }
+        .wrapper.--full {
+            width: 100%;
+        }
+    }
+
+  }
+
+  @media all and (min-width: 993px)
+  { 
+    #how-works {
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &__title {
+                width: 100%;
+            }
+            &__step {
+                width: calc(100% / 3 - 20px);
+            }
+        }
+    }
+
+    #restaurants {
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &__card {
+                width: calc(100% / 4 - 20px);
+            }
+        }
+    }
+
+  }
