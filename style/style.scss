@@ -1,5 +1,5 @@
 $color-primary: #9356DC;
-$color-primary-opacified: #9256dc3b;
+$color-primary-opacified: #ff79d956;
 $color-secondary: #FF79DA;
 $color-tertiaire: #99E2D0;
 $color-tertiaire-text: #269c80;
@@ -21,22 +21,18 @@ $footer-color: #353535;
 
 @mixin shadow(){
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
-    transition-duration: 700ms;
 }
 
 @mixin shadow--animation(){
-    transition-duration: 700ms;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.541);
 }
 
 @mixin gradient(){
-    transition-duration: 700ms;
     background: rgb(147,86,220);
     background: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
 }
 
 @mixin gradient--animation(){
-    transition-duration: 700ms;
     background: rgb(163, 103, 236);
     background: linear-gradient(0deg, rgb(182, 132, 243) 0%, rgb(241, 157, 218) 100%);
 }
@@ -69,6 +65,7 @@ a:visited {
     color: white;
     @include shadow();
     &:hover, :active {
+        transition-duration: 4s;
         cursor: pointer;
         @include shadow--animation();
         @include gradient--animation();
@@ -81,7 +78,23 @@ a:visited {
     animation-duration: 1s;
     animation-name: progress_opacity;
     animation-fill-mode: forwards;
+    animation-timing-function: linear;
 }
+
+/* Position Absolute fromMenuPage Like */
+.checked.pa {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+}
+
+.checked.pa:hover {
+    opacity: 1;
+    color: $color-primary;
+    transition-duration: 400ms;
+    cursor: pointer;
+}
+
 
 header {
     position: relative;
@@ -197,6 +210,7 @@ header {
             &:hover {
                 @include shadow--animation();
                 background-color: $color-primary-opacified;
+                cursor: pointer;
             }
 
             &:hover > .wrapper__step__content > i{
@@ -225,9 +239,10 @@ header {
             &__content {
                 width: 85%;
                 margin: auto;
-                margin-left: 15px;
+                margin-left: 25px;
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 i {
                     margin-right: 30px;
                     font-size: 20px;
@@ -270,10 +285,18 @@ header {
                 padding: 20px;
                 display: flex;
                 justify-content: space-between;
+
+                &__restaurant {
+                    width: calc(100% - 30px);
+                }
                 
                 &__restaurant__name {
                     font-size: 18px;
                     font-weight: bold;
+                    display: block;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
                 }
                 
                 &__like {
@@ -285,14 +308,15 @@ header {
                         margin: auto;
                         z-index: 1;
                         transition-duration: 400ms;
-                        &.far.fa-heart:hover ~ i.checked {
-                            color: $color-primary;
-                            opacity: 1;
-                        }
+                        
                     }
                     i.checked:hover {
                         opacity: 1;
                         color: $color-primary;
+                        cursor: pointer;
+                    }
+                    i.checked:hover ~ i.far.fa-heart {
+                        opacity: 0;
                     }
                     i.checked {
                         transition-duration: 400ms;
@@ -325,7 +349,7 @@ header {
                     width: 100%;
                     border-top-left-radius: 20px;
                     border-top-right-radius: 20px;
-                    max-height: 220px;
+                    height: 280px;
                 }
             }
         }
@@ -361,6 +385,12 @@ header {
             padding-top: 15px;
             padding-bottom: 15px;
         }
+
+        &__title.fromMenu {
+            position: relative;
+            justify-content: space-between;
+            display: flex;
+        }
         
         .divider {
             margin-top: 5px;
@@ -375,8 +405,8 @@ header {
             margin-top: 10px;
             margin-bottom: 10px;
             &__item {
-                animation-duration: 4.5s;
-                animation-name: progress_opacity;
+                cursor: pointer;
+                animation: progress_opacity 4s, bottomToTop 1s;
                 margin-top: 20px;
                 margin-bottom: 20px;
                 position: relative;
@@ -385,12 +415,15 @@ header {
                 @include shadow();
                 padding: 15px;
                 &:hover > .check {
+                    cursor: pointer;
                     transition-duration: 500ms;
                     width: 60px;
                     display: flex;
+                    align-items: center;
                 }
 
                 &:hover > .check > i {
+                    animation: rolling_check 1s;
                     transition-delay: 100ms;
                     transition-duration: 400ms;
                     transform: rotate(360deg);
@@ -445,9 +478,12 @@ header {
                     transition-duration: 500ms;
                     justify-content: center;
                     display: flex;
+                    align-items: center;
                     i{
                         transition-duration: 50ms;
                         opacity: 0;
+                        position: absolute;
+                        right: 30;
                     }
                     i { 
                         transition-duration: 400ms;
@@ -493,6 +529,10 @@ footer {
                     margin-right: 10px;
                     size: 13px;
                 }
+                a {
+                    display: inline;
+                    color: white;
+                }
             }
         }
     }
@@ -501,8 +541,16 @@ footer {
 
 /* Animations */
 
+@keyframes rolling_check {
+    from {right: 0;} to {right: 22px;}
+}
+
 @keyframes progress_opacity {
-    from {opacity: 0;} to {opacity: 1;}
+    from {opacity: 0} to {opacity: 1}
+}
+
+@keyframes bottomToTop {
+    from {margin-top: 30px;} to {margin-top: 20px;}
 }
 
 @keyframes progress_opacity_reverse {
@@ -676,6 +724,12 @@ footer {
             &__card {
                 width: calc(100% / 4 - 20px);
             }
+        }
+    }
+
+    #restaurant__picture {
+        img {
+            min-height: 330px;
         }
     }
 
