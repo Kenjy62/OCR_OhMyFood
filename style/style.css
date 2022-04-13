@@ -271,6 +271,7 @@ header .return a i {
 }
 
 #how-works .wrapper__step__content i {
+  margin-right: 30px;
   font-size: 20px;
   color: #7d7d7d;
 }
@@ -575,7 +576,6 @@ header .return a i {
           transition-duration: 50ms;
   opacity: 0;
   position: absolute;
-  right: 30px;
 }
 
 #restaurant__content .wrapper__selection__item .check i {
