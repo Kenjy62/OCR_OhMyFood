@@ -392,13 +392,17 @@ header {
             display: flex;
         }
         
-        .divider {
+        &__subtitle span {
+            display: inline-block;
+        }
+
+        &__subtitle span::after {
             margin-top: 5px;
-            margin-bottom: 5px;
-            width: 50px;
+            content: "";
             height: 3px;
-            border-radius: 5px;
             background-color: $color-tertiaire;
+            width: 40px;
+            display: block;
         }
 
         &__selection {

@@ -446,13 +446,17 @@ header .return a i {
   display: flex;
 }
 
-#restaurant__content .wrapper .divider {
+#restaurant__content .wrapper__subtitle span {
+  display: inline-block;
+}
+
+#restaurant__content .wrapper__subtitle span::after {
   margin-top: 5px;
-  margin-bottom: 5px;
-  width: 50px;
+  content: "";
   height: 3px;
-  border-radius: 5px;
   background-color: #99E2D0;
+  width: 40px;
+  display: block;
 }
 
 #restaurant__content .wrapper__selection {
