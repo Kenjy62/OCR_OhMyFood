@@ -16,7 +16,7 @@ Integrate the models and create the various animations
 
 > HTML
 >
-> CSS
+> CSS with SASS
 >
 > Vanilla JS
 
